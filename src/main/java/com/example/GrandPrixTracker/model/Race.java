@@ -19,7 +19,6 @@ public class Race {
     @Column (nullable = false)
     private String country;
 
-
     @Column(nullable = false)
     private String name;
 
@@ -28,6 +27,9 @@ public class Race {
 
     @Column
     private Date date;
+
+    @ManyToOne
+    private Track track;
 
     public void setId(Long id) {
         this.id = id;
@@ -71,5 +73,11 @@ public class Race {
     }
 
 
+    public Track getTrack() {
+        return track;
+    }
 
+    public void setTrack(Track track) {
+        this.track = track;
+    }
 }
