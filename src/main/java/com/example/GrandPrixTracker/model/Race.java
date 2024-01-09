@@ -12,6 +12,17 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 public class Race {
+
+    /*
+
+    race name
+    race country
+
+    race positions
+
+    */
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
