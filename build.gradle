@@ -33,4 +33,9 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	dependsOn 'cleanTest'
+
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
 }

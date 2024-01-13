@@ -18,10 +18,6 @@ public interface ErgastApiClient {
     @Headers("accept: application/json")
     CompletableFuture<ErgastResponse<ErgastRace>> getRaceResult(@Path("year") Integer year, @Path("round") Integer round);
 
-    @GET( "{year}/results.json?limit=1000")
-    @Headers("accept: application/json")
-    CompletableFuture<ErgastResponse<ErgastRace>> getRaceResultsOfYear(@Path("year") Integer year);
-
     @GET("{year}.json")
     @Headers("accept: application/json")
     CompletableFuture<ErgastResponse<ErgastRace>> getSeasonGrandPrixs(@Path("year") Integer year);
