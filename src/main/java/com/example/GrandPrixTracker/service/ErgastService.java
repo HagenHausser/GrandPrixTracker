@@ -39,6 +39,20 @@ public class ErgastService {
         return race;
     }
 
+    public List<RaceDto> getYearsRaceResults(Integer year) {
+        List<RaceDto> races = new ArrayList<>();
+        try {
+            ErgastResponse<ErgastRace> response = ergastClient.getRaceResultsOfYear(year).get();
+
+            for (ErgastRace race : response.data.raceTable.races) {
+                races.add(RaceDto.from(race));
+            }
+        } catch (Exception exc) {
+            System.out.println("Error fetching race result: " + exc);
+        }
+        return races;
+    }
+
     public List<GrandPrixDto> getSeasonGrandPrixs(Integer year) {
         List<GrandPrixDto> grandPrixs = new ArrayList<>();
         try {
